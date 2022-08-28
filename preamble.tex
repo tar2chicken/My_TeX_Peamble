@@ -1,0 +1,216 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Notes                                                               %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 1    Don't use \qty of siunitx, use \SI.
+%% 1    \qty of physics package can be used as usual.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Packages and librarys                                               %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  Packages that provide the document structure, fonts, and symbols needed to 
+%%  write mathematical expressions.
+\usepackage{amsmath, amsfonts, amssymb}
+
+%%  A package that provides theorem-like environments.
+\usepackage{amsthm}
+
+%%  A package needed to write bold symbols in math mode.
+\usepackage{bm}
+
+%%  A package needed to add color to text.
+\usepackage{color}
+
+%%  A package that provides comment environment.
+\usepackage{comment}
+
+%%  A package needed to insert images.
+\usepackage{graphicx}
+
+%%  A package needed to create hypertext links.
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true, 
+    colorlinks=true, 
+    citecolor=blue, 
+    linkcolor=blue, 
+    urlcolor=blue
+}
+
+%%  A package needed to write chemical formulea.
+\usepackage[version=4]{mhchem}
+
+%%  A packege that provides an environment for colored and framed text boxes.
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+
+%%  A package that provides advanced drawing capabilities.
+\usepackage{tikz}
+
+%%  To avoid \qty conflict, siunitx must be loaded before physics package.
+%%  Siunitx package is needed to write values with units.
+%%  Physics package makes typesetting equations for physics simpler.
+\usepackage{siunitx}
+\usepackage{physics}
+
+%%  Packages needed to use Times New Roman.
+%%  \usepackage{newtxtext, newtxmath}
+%%  \usepackage{type1cm}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Settings of style                                                   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  Format of enumerate environment
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+
+%%  Numbering
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+%%  Format of footnote
+\renewcommand{\thefootnote}{*\arabic{footnote}}
+
+%%  Format of theorem-like environment
+\theoremstyle{definition}
+
+%%  Definition environment
+\newtheorem{define}{定義}[section]
+\newenvironment{definition}{
+    \begin{tcolorbox}[
+        sharp corners, 
+        colback=blue!10, 
+        colframe=white, 
+        breakable=true
+    ]
+    \begin{define}
+}{
+    \end{define}
+    \end{tcolorbox}
+}
+
+%%  Proposition environment
+\newtheorem{prop}{命題}[section]
+\newenvironment{proposition}{
+    \begin{tcolorbox}[
+        sharp corners, 
+        colback=red!10, 
+        colframe=white, 
+        breakable=true
+    ]
+    \begin{prop}
+}{
+    \end{prop}
+    \end{tcolorbox}
+}
+
+%%  Theorem environment
+\newtheorem{thm}[prop]{定理}
+\newenvironment{theorem}{
+    \begin{tcolorbox}[
+        sharp corners, 
+        colback=red!10, 
+        colframe=white, 
+        breakable=true
+    ]
+    \begin{thm}
+}{
+    \end{thm}
+    \end{tcolorbox}
+}
+
+%%  Proof environment
+\renewcommand{\proofname}{\textgt{証明}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Other Commands                                                      %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  Reference between parenthesis
+\newcommand{\refpr}[1]{(\ref{#1})}
+
+%%  Constant
+\newcommand{\const}{\mathrm{const.}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Templates                                                           %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  Template of the entire document
+\begin{comment}
+    \documentclass[dvipdfmx]{jsarticle}
+    \input{preamble.tex}
+    \pagestyle{myheadings}
+    \title{title}
+    \author{author's_name}
+    \date{\today}
+
+    \begin{document}
+    \maketitle
+    \tableofcontents
+
+    \addcontentsline{toc}{section}{Reference}
+    \begin{thebibliography}{9}
+        \bibitem{author} author, title, publisher, year.
+    \end{thebibliography}
+
+
+    \end{document}
+\end{comment}
+
+%%  Template of figure environment and table environment
+\begin{comment}
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[keepaspectratio, width=30em]{figures/}
+        \caption{}
+        \label{}
+    \end{figure}
+    \begin{figure}[htb]
+        \begin{tabular}{cc}
+            \begin{minipage}[t]{0.45\hsize}
+                \centering
+                \includegraphics[keepaspectratio, width=20em]{figures/}
+                \caption{}
+                \label{}
+            \end{minipage} &
+            \begin{minipage}[t]{0.45\hsize}
+                \centering
+                \includegraphics[keepaspectratio, width=20em]{figures/}
+                \caption{}
+                \label{}
+            \end{minipage} \\
+        \end{tabular}
+    \end{figure}
+    \begin{table}[htb]
+        \centering
+        \caption{}
+        \label{}
+        \begin{tabular}{cc}
+            \hline
+                &  \\
+            \hline
+                &  \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{comment}
+
+
+
+
