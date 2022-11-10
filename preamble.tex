@@ -2,36 +2,36 @@
 %%%%    Notes                                                               %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% 1    Don't use \qty of siunitx, use \SI.
-%% 1    \qty of physics package can be used as usual.
+%% 1    Don't use \qty command of siunitx package, use \SI command.
+%% 1    The \qty command of physics package can be used as usual.
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%    Packages and librarys                                               %%%%
+%%%%    Packages and libraries                                              %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%  Packages that provide the document structure, fonts, and symbols needed to 
-%%  write mathematical expressions.
+%%  write mathematical formulae.
 \usepackage{amsmath, amsfonts, amssymb}
 
-%%  A package that provides theorem-like environments.
+%%  Package that provides theorem-like environments.
 \usepackage{amsthm}
 
-%%  A package needed to write bold symbols in math mode.
+%%  Package required to write bold symbols in math mode.
 \usepackage{bm}
 
-%%  A package needed to add color to text.
+%%  Package required to add color to text.
 \usepackage{color}
 
-%%  A package that provides comment environment.
+%%  Package required to comment out multiple lines.
 \usepackage{comment}
 
-%%  A package needed to insert images.
+%%  Package required to insert images.
 \usepackage{graphicx}
 
-%%  A package needed to create hypertext links.
+%%  Package required to create hypertext links.
 \usepackage{hyperref}
 \hypersetup{
     unicode=true, 
@@ -41,26 +41,26 @@
     urlcolor=blue
 }
 
-%%  A package needed to write chemical formulea.
+%%  Package required to write chemical formulae.
 \usepackage[version=4]{mhchem}
 
-%%  A packege that provides an environment for colored and framed text boxes.
+%%  Packege that provides environments for colored and framed text boxes.
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
 
-%%  Package needed to split a file.
+%%  Package required to split a file.
 \usepackage{subfiles}
 
-%%  A package that provides advanced drawing capabilities.
+%%  Package required to draw diagrams.
 \usepackage{tikz}
 
-%%  To avoid \qty conflict, siunitx must be loaded before physics package.
-%%  Siunitx package is needed to write values with units.
-%%  Physics package makes typesetting equations for physics simpler.
+%%  To avoid the qty conflict, load siunitx package before physics package.
+%%  Siunitx package is required to write values with units.
+%%  Physics package simplifies the writing of mathematical formulae.
 \usepackage{siunitx}
 \usepackage{physics}
 
-%%  Packages needed to use Times New Roman.
+%%  Packages required to write text and mathematical formulae in Times New Roman.
 %%  \usepackage{newtxtext, newtxmath}
 %%  \usepackage{type1cm}
 
