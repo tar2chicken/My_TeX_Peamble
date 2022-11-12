@@ -5,6 +5,8 @@
 %% 1    Don't use \qty command of siunitx package, use \SI command.
 %% 1    The \qty command of physics package can be used as usual.
 
+%% 2    OFF : amsthm, tcolorbox, newtxtext, newtxmath, type1cm
+
 
 
 
@@ -33,8 +35,8 @@
 
 %%  Package required to create hypertext links.
 \usepackage{hyperref}
+\usepackage{pxjahyper}
 \hypersetup{
-    unicode=true, 
     colorlinks=true, 
     citecolor=blue, 
     linkcolor=blue, 
@@ -159,7 +161,7 @@
 
 %%  Template of the entire document
 \begin{comment}
-    \documentclass[dvipdfmx]{jsarticle}
+    \documentclass[uplatex, dvipdfmx]{jsarticle}
     \input{preamble.tex}
     \pagestyle{myheadings}
     \title{タイトル}
@@ -175,44 +177,45 @@
         \bibitem{author} 著者 ( 著 ), 訳者 ( 訳 ), 『本の名前』 ( シリーズ ), 出版社, 出版年.
     \end{thebibliography}
 
-
     \end{document}
 \end{comment}
 
 %%  Template of figure environment and table environment
 \begin{comment}
-    \begin{figure}[htb]
+    \begin{figure}[htbp]
         \centering
-        \includegraphics[keepaspectratio, width=30em]{figures/}
+        \includegraphics[keepaspectratio, width=9cm]{figures/}
         \caption{}
         \label{}
     \end{figure}
-    \begin{figure}[htb]
+
+    \begin{figure}[htbp]
         \begin{tabular}{cc}
             \begin{minipage}[t]{0.45\hsize}
                 \centering
-                \includegraphics[keepaspectratio, width=20em]{figures/}
+                \includegraphics[keepaspectratio, width=6cm]{figures/}
                 \caption{}
                 \label{}
             \end{minipage} &
             \begin{minipage}[t]{0.45\hsize}
                 \centering
-                \includegraphics[keepaspectratio, width=20em]{figures/}
+                \includegraphics[keepaspectratio, width=6cm]{figures/}
                 \caption{}
                 \label{}
             \end{minipage} \\
         \end{tabular}
     \end{figure}
-    \begin{table}[htb]
+
+    \begin{table}[htbp]
         \centering
         \caption{}
         \label{}
         \begin{tabular}{cc}
-            \hline
+            \hline \hline
                 &  \\
             \hline
                 &  \\
-            \hline
+            \hline \hline
         \end{tabular}
     \end{table}
 \end{comment}
